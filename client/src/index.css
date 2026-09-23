@@ -160,3 +160,31 @@ input:focus, select:focus, textarea:focus { border-color: var(--primary); box-sh
 @keyframes drift { from { transform: translateY(0); } to { transform: translateY(-5px); } }
 @keyframes float { from { transform: translateY(0); } to { transform: translateY(-7px); } }
 @keyframes pulse { 0%, 100% { transform: scale(.96); opacity: .8; } 50% { transform: scale(1.03); opacity: 1; } }
+
+/* Specification route polish */
+.feature-route-grid { align-items: stretch; }
+.feature-route-grid .recommendation-card { min-height: 356px; display: flex; flex-direction: column; }
+.feature-route-grid .recommendation-card > .button { margin-top: auto; align-self: flex-start; }
+.recommendation-active { outline: 2px solid color-mix(in srgb, var(--primary) 55%, transparent); outline-offset: 3px; }
+.transparency-card { margin-top: 22px; padding: 24px 25px; }
+.transparency-card > p { margin: 18px 0 0; color: var(--muted); font-size: 12px; }
+.transparency-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 18px; color: var(--foreground); font-size: 13px; font-weight: 700; }
+.transparency-flow span { padding: 10px 13px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-soft); }
+.transparency-flow svg { color: var(--primary); }
+.onboarding-page .auth-form { max-width: 620px; }
+.onboarding-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 24px; }
+.onboarding-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
+.empty-state-card { margin-top: 24px; text-align: center; padding: 26px; }
+.empty-state-card > svg { color: var(--success); margin-bottom: 10px; }
+.empty-state-card h3 { margin: 0 0 6px; }
+.empty-state-card p { margin: 0 0 20px; color: var(--muted); }
+@media (max-width: 760px) {
+  .feature-route-grid { grid-template-columns: 1fr; }
+  .transparency-flow { align-items: stretch; flex-direction: column; }
+  .transparency-flow svg { transform: rotate(90deg); align-self: center; }
+}
+@media (max-width: 560px) {
+  .onboarding-choices { grid-template-columns: 1fr; }
+  .onboarding-actions { margin-top: 18px; }
+  .onboarding-actions .button { flex: 1; }
+}
